@@ -1,0 +1,15 @@
+# 클러스터 만들기
+1. k3d cluster create mycluster
+
+
+
+# 노드 추가하기 
+2. k3d node create mycluster-agent0 --cluster mycluster
+3. k3d node create mycluster-agent1 --cluster mycluster
+4. k3d node create mycluster-agent2 --cluster mycluster
+
+#노드에 사양 설정하기 
+1. docker update --cpus 1  --memory 0.1g --memory-swap 0.3g k3d-mycluster-agenet0-0
+2. docker update --cpus 1  --memory 0.1g --memory-swap 0.3g k3d-mycluster-agenet1-0
+3. docker update --cpus 2  --memory 3g --memory-swap 6g k3d-mycluster-agenet2-0
+
